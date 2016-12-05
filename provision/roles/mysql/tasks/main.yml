@@ -1,0 +1,13 @@
+
+- name: ensure mysql-server installed
+  yum: name={{ item }} state=present
+  with_items:
+    - mysql-server
+    - MySQL-python
+
+- name: mysqld start
+  service: name=mysqld state=restarted enabled=yes
+
+
+- name: drop database test
+  mysql_db:  db=test state=absent

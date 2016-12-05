@@ -1,0 +1,21 @@
+---
+  - name: ensure epel in last version
+    yum: name=epel-release state=latest
+
+  - name: ensure git is the last version
+    yum: name=git state=latest
+
+  - name: ensure wget is the last version
+    yum: name=wget state=latest
+
+  - name: ensure vim is the last version
+    yum: name=vim state=latest
+
+  - name: iptables rules
+    copy: src=iptables dest=/etc/sysconfig/iptables
+    notify: restart iptables
+
+  - name: install the 'Development tools' package group
+    yum:
+      name: "@Development tools"
+      state: present

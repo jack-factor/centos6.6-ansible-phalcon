@@ -1,0 +1,4 @@
+1.centos.box.rest.test ansible_ssh_host=192.168.20.31 ansible_ssh_port=22
+
+[webservers]
+1.centos.box.rest.test

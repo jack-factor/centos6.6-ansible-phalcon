@@ -1,0 +1,8 @@
+#NGINX
+listen_port: 80
+server_name: 1.centos.box.rest.test
+worker_processess: 1
+root_path: /var/www/local.rest.test
+types_hash_max_size : 512
+client_max_body_size : 2m
+vhost: 1.centos.box.rest.test.conf
